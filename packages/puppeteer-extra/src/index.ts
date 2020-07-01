@@ -418,15 +418,15 @@ export class PuppeteerExtra implements VanillaPuppeteer {
   private checkPluginRequirements(opts = {} as any) {
     for (const plugin of this._plugins) {
       for (const requirement of plugin.requirements) {
-        if (
-          opts.context === 'launch' &&
-          requirement === 'headful' &&
-          opts.options.headless
-        ) {
-          console.warn(
-            `Warning: Plugin '${plugin.name}' is not supported in headless mode.`
-          )
-        }
+//         if (
+//           opts.context === 'launch' &&
+//           requirement === 'headful' &&
+//           opts.options.headless
+//         ) {
+//           console.warn(
+//             `Warning: Plugin '${plugin.name}' is not supported in headless mode.`
+//           )
+//         }
         if (opts.context === 'connect' && requirement === 'launch') {
           console.warn(
             `Warning: Plugin '${plugin.name}' doesn't support puppeteer.connect().`
